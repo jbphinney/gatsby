@@ -7,14 +7,22 @@ module.exports = {
           process.env.WPGRAPHQL_URL ||
           `https://gatsbytest2.wpenginepowered.com/graphql`,
 
-        schema: {
-          exclude: [
-            `WpPluginConnectionType`,
-            `WpThemeConnectionType`,
-            `WpEnqueuedScriptConnectionType`,
-            `WpEnqueuedStylesheetConnectionType`,
-            `WpActionMonitorActionConnectionType`,
-          ],
+        type: {
+          WpPluginConnection: {
+            excludeFieldNames: [`nodes`],
+          },
+          WpThemeConnection: {
+            excludeFieldNames: [`nodes`],
+          },
+          WpEnqueuedScriptConnection: {
+            excludeFieldNames: [`nodes`],
+          },
+          WpEnqueuedStylesheetConnection: {
+            excludeFieldNames: [`nodes`],
+          },
+          WpActionMonitorActionConnection: {
+            excludeFieldNames: [`nodes`],
+          },
         },
       },
     },
