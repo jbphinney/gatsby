@@ -8,15 +8,13 @@ module.exports = {
           `https://gatsbytest2.wpenginepowered.com/graphql`,
 
         schema: {
-          type: {
-            exclude: [
-              `WpPluginConnectionType`,
-              `WpThemeConnectionType`,
-              `WpEnqueuedScriptConnectionType`,
-              `WpEnqueuedStylesheetConnectionType`,
-              `WpActionMonitorActionConnectionType`,
-            ],
-          },
+          exclude: [
+            `WpPluginConnectionType`,
+            `WpThemeConnectionType`,
+            `WpEnqueuedScriptConnectionType`,
+            `WpEnqueuedStylesheetConnectionType`,
+            `WpActionMonitorActionConnectionType`,
+          ],
         },
       },
     },
