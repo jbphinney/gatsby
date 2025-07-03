@@ -1,4 +1,11 @@
 module.exports = {
+  // ✅ Temporary workaround for ENOSPC watcher limit errors
+  flags: {
+    DEV_SSR: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  },
+
   plugins: [
     {
       resolve: `gatsby-source-wordpress`,
@@ -7,6 +14,7 @@ module.exports = {
           process.env.WPGRAPHQL_URL ||
           `https://gatsbytest2.wpenginepowered.com/graphql`,
 
+        // ✅ Prevent Gatsby from accessing invalid "nodes" fields
         type: {
           WpPluginConnection: {
             excludeFieldNames: [`nodes`],
